@@ -1,0 +1,43 @@
+.app-container-albums {
+    width: 350px;
+    min-height: 300px;
+    max-height: 400px;
+    background-color: aliceblue;
+    overflow: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.app-container-albums__name {
+    font-weight: bold;
+    font-size: 20px;
+    margin: 15px 0px 0px 15px;
+}
+
+.app-container-albums__list-items {
+    margin: 15px 0px 0px 35px;;
+}
+
+.app-container-albums__link-back {
+    position: relative;
+    margin: 15px 0px 15px 34px;
+    clear: both;
+}
+
+.app-container-albums__link-back > a {
+    text-decoration: none;
+}
+
+.app-container-albums__link-back > a:visited,
+.app-container-albums__link-back > a:link {
+    color: cornflowerblue;
+}
+
+.app-container-albums__link-back > a:hover {
+    color: #008CBA;
+}
+
+.app-container-albums__item {
+    float: left;
+    margin-right: 10px;
+}

@@ -13,14 +13,21 @@ class ListArtist extends Component {
         }
     }
 
-    handleShowArtists() {
+    componentWillMount() {
+        this.setState({artists: JSON.parse(localStorage.getItem("artists"))})
+    }
+
+    handleShowArtists(e) {
         let artistName = document.querySelector(".app-container-artists__search-input").value;
         axios.get(`${host["name"]}?method=artist.search&artist=${artistName}&api_key=${host["api_key"]}&format=json`)
             .then((res)=>{
                 if (res.data.results.artistmatches.artist.length > 0) {
-                    this.setState({artists: res.data.results.artistmatches.artist})
+                    this.setState({artists: res.data.results.artistmatches.artist});
+                    localStorage.setItem("artists", JSON.stringify(res.data.results.artistmatches.artist));
                 } else {
                     this.setState({textResult: "Не найдено ни одного исполнителя"});
+                    this.setState({artists: []});
+                    localStorage.setItem("artists", JSON.stringify([]));
                     setTimeout(()=>{ this.setState({textResult: "Введите название исполнителя"})}, 2000)
                 }
             })

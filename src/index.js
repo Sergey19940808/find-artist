@@ -10,7 +10,7 @@ ReactDOM.render(
     <BrowserRouter>
         <div>
             <Route exact path='/' component={App} />
-            <Route exact path='/artist/:name' component={ListAlbum} />
+            <Route path='/artist/:name' component={ListAlbum} />
         </div>
     </BrowserRouter>,
     document.getElementById('root'));

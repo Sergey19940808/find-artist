@@ -10,7 +10,7 @@ class Album extends Component {
                          {
                              this.props.image["#text"] !== "" ?
                                  this.props.image["#text"] :
-                                 "../default_image.png"
+                                 "/default_image.png"
                          }
                      width="64"
                      height="64"

@@ -1,0 +1,63 @@
+.app-container-artists {
+    width: 350px;
+    min-height: 300px;
+    max-height: 400px;
+    background-color: aliceblue;
+    margin: 0 auto;
+}
+
+.app-container-artists__search {
+    margin-left: 10px;
+}
+
+.app-container-artists__search-title {
+    font-size: 14px;
+}
+
+.app-container-artists__search-input {
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 20px;
+    width: 150px;
+    border: paleturquoise 1px solid;
+}
+
+.app-container-artists__search-input:focus {
+    outline: none;
+}
+
+.app-container-artists__search-button {
+    margin-left: 10px;
+    height: 14px;
+    cursor: pointer;
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 5px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.app-container-artists__search-result {
+    margin-top: 15px;
+    margin-left: 12px;
+}
+
+.app-container-artist__item {
+    list-style-type: none;
+}
+
+.app-container-artist__item > a {
+    text-decoration: none;
+}
+
+.app-container-artist__item > a:visited,
+.app-container-artist__item > a:link {
+    color: cornflowerblue;
+}
+
+.app-container-artist__item > a:hover {
+    color: #008CBA;
+}

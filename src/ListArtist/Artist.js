@@ -3,8 +3,21 @@ import { Link } from 'react-router-dom';
 import './Artist.css';
 
 class Artist extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            name: ""
+        }
+    }
+
+    componentWillMount() {
+
+    }
+
 
     render() {
+
+
         return (
             <div className="app-container-artist">
                 <ul className="app-container-artist__list">

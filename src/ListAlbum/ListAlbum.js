@@ -32,15 +32,15 @@ class ListAlbum extends Component {
                     </div>
                     <div className="app-container-albums__list-items">
                         {
-
-                            this.state.albums.map((i)=>{
-                                return(
-                                    <Album
-                                        key={i.name}
-                                        image={i.image[1]}
-                                    />
-                                )
-                            })
+                            this.state.albums.length > 0 ?
+                                this.state.albums.map((i)=>{
+                                    return(
+                                        <Album
+                                            key={i.name}
+                                            image={i.image[1]}
+                                        />
+                                    )
+                                }) : <em>У исполнителя отсутсвуют альбомы</em>
                         }
                     </div>
                     <div className="app-container-albums__link-back">

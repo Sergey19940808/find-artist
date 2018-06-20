@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
 import './Album.css';
 import Album from "./Album";
 import axios from "axios/index";
@@ -43,7 +44,9 @@ class ListAlbum extends Component {
                         }
                     </div>
                     <div className="app-container-albums__link-back">
-                        <a href="/">Вернуться назад</a>
+                        <Link to="/">
+                            Вернуться назад
+                        </Link>
                     </div>
 
                 </div>

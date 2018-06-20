@@ -17,23 +17,39 @@ class ListArtist extends Component {
         this.setState({artists: JSON.parse(localStorage.getItem("artists"))})
     }
 
-    handleShowArtists(e) {
+    handleShowArtists() {
+
         let artistName = document.querySelector(".app-container-artists__search-input").value;
-        axios.get(`${host["name"]}?method=artist.search&artist=${artistName}&api_key=${host["api_key"]}&format=json`)
-            .then((res)=>{
-                if (res.data.results.artistmatches.artist.length > 0) {
-                    this.setState({artists: res.data.results.artistmatches.artist});
-                    localStorage.setItem("artists", JSON.stringify(res.data.results.artistmatches.artist));
-                } else {
-                    this.setState({textResult: "Не найдено ни одного исполнителя"});
-                    this.setState({artists: []});
-                    localStorage.setItem("artists", JSON.stringify([]));
-                    setTimeout(()=>{ this.setState({textResult: "Введите название исполнителя"})}, 2000)
-                }
-            })
-            .catch((error)=>{
-                console.log(error)
-            })
+
+        if (artistName !== "") {
+            axios.get(`${host["name"]}?method=artist.search&artist=${artistName}&api_key=${host["api_key"]}&format=json`)
+
+                .then((res) => {
+
+                    if (res.data.results.artistmatches.artist.length > 0) {
+                        this.setState({artists: res.data.results.artistmatches.artist});
+                        localStorage.setItem("artists", JSON.stringify(res.data.results.artistmatches.artist));
+
+                    } else {
+                        this.setState({textResult: "Не найдено ни одного исполнителя"});
+                        this.setState({artists: []});
+
+                        localStorage.setItem("artists", JSON.stringify([]));
+                        setTimeout(() => {
+                            this.setState({textResult: "Введите название исполнителя"})
+                        }, 1500)
+                    }
+                })
+                .catch((error) => {
+                    console.log(error)
+                })
+        } else {
+            this.setState({textResult: "Вы не ввели имя исполнителя"});
+            this.setState({artists: []});
+            setTimeout(() => {
+                this.setState({textResult: "Введите название исполнителя"})
+            }, 1500)
+        }
     }
 
     render() {
